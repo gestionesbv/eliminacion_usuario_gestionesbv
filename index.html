@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminación de Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 500px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminación de Datos</h1>
+    <p>Nos tomamos muy en serio la privacidad de tus datos. Si deseas eliminar los datos asociados a tu cuenta, sigue estos pasos:</p>
+    <ol>
+        <li>Rellena el formulario a continuación con la información requerida.</li>
+        <li>Haz clic en "Enviar Solicitud".</li>
+        <li>Procesaremos tu solicitud dentro de un plazo de 30 días hábiles.</li>
+    </ol>
+
+    <form action="https://formsubmit.co/tu-correo@dominio.com" method="POST">
+        <label for="userID">ID de Usuario:</label>
+        <input type="text" id="userID" name="userID" placeholder="Escribe tu ID de usuario" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
+
+        <!-- Configuración opcional de reCAPTCHA -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirección después de enviar -->
+        <input type="hidden" name="_next" value="https://tusitio.com/gracias">
+
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+</body>
+</html>
