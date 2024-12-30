@@ -9,9 +9,9 @@
             margin: 0;
             font-family: 'Helvetica', sans-serif;
             color: #333;
-            display: flex; /* Para centrar el contenido verticalmente en pantallas grandes */
+            display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Asegura que el footer esté siempre abajo */
+            min-height: 100vh;
         }
 
         .background-overlay {
@@ -59,19 +59,19 @@
 
         .content {
             padding: 40px;
-            flex: 1; /* Permite que el contenido principal se expanda */
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 40px;
-            width: 90%; /* Ancho máximo del contenido */
+            width: 90%;
             max-width: 1200px;
-            margin: 0 auto; /* Centra el contenido horizontalmente */
+            margin: 0 auto;
         }
 
         .services {
             display: flex;
-            justify-content: center; /* Centra los elementos horizontalmente */
+            justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
@@ -82,8 +82,8 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
-            width: calc(33.33% - 27px); /* Ajuste para el gap */
-            box-sizing: border-box; /* Incluye el padding y el border en el ancho */
+            width: calc(33.33% - 27px);
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             aspect-ratio: 1 / 1;
@@ -92,7 +92,7 @@
 
         .service-item img {
             width: 100%;
-            height: 60%;
+            height: 50%;
             border-radius: 10px;
             margin-bottom: 15px;
             object-fit: cover;
@@ -106,13 +106,14 @@
 
         .service-item p {
             color: #666;
-            font-size: 1em;
+            font-size: 0.9em;
             line-height: 1.5;
             text-align: justify;
-            flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Alinea el texto al inicio */
+            justify-content: flex-start;
+            overflow: hidden;
         }
 
         footer {
@@ -125,15 +126,15 @@
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 900px) { /* Ajuste del breakpoint */
+        @media (max-width: 900px) {
             .service-item {
-                width: calc(50% - 20px); /* Dos columnas en pantallas medianas */
+                width: calc(50% - 30px);
             }
         }
 
-        @media (max-width: 600px) { /* Ajuste del breakpoint */
+        @media (max-width: 600px) {
             .service-item {
-                width: 90%; /* Una columna en pantallas pequeñas */
+                width: 95%;
             }
             .content {
                 padding: 20px;
