@@ -33,8 +33,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            font-size: 1.5em;
+            font-size: 1.3em;
             flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         header h1 {
@@ -48,6 +50,8 @@
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         nav a {
@@ -135,32 +139,38 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 padding: 10px 20px;
-                width: 100%; /* <-- Solución al problema del ancho en móviles */
+                width: 100%;
                 box-sizing: border-box;
             }
+
             nav {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 5px;
                 width: 100%;
+                box-sizing: border-box;
             }
+
             nav a {
                 width: 100%;
                 text-align: center;
                 padding: 10px;
                 box-sizing: border-box;
             }
+
             .services-top {
                 flex-direction: column;
                 gap: 20px;
             }
+
             .service-item {
                 width: 100%;
                 margin-bottom: 20px;
                 min-height: 250px;
             }
+
             .service-item p {
                 font-size: 1.1em;
             }
