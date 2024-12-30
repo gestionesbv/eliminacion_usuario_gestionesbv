@@ -82,7 +82,6 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
-            width: calc(33.33% - 27px);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -116,25 +115,25 @@
             overflow: hidden;
         }
 
-        footer {
-            background-color: rgba(248, 249, 250, 0.85);
-            color: #555;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 1em;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        .services .service-item:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        @media (min-width: 901px) {
+            .service-item {
+              width: calc(33.33% - 27px + 20%);
+            }
         }
 
         @media (max-width: 900px) {
             .service-item {
-                width: calc(50% - 30px);
+                width: calc(50% - 30px + 10%);
             }
         }
 
         @media (max-width: 600px) {
             .service-item {
-                width: 95%;
+                width: 100%;
             }
             .content {
                 padding: 20px;
