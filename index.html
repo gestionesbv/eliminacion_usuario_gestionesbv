@@ -20,7 +20,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://gestionesbv.github.io/eliminacion_usuario_gestionesbv/Como-crear-una-estrategia-de-marketing-en-redes-sociales-01.png') no-repeat center center fixed;
+            background: url('https://gestionesbv.github.io/gestiones_bv/Como-crear-una-estrategia-de-marketing-en-redes-sociales-01.png') no-repeat center center fixed;
             background-size: cover;
             opacity: 0.3;
             z-index: -1;
@@ -34,29 +34,23 @@
             align-items: center;
             padding: 20px 40px;
             font-size: 1.5em;
-            flex-wrap: wrap;
         }
 
         header h1 {
             font-size: 2em;
             margin: 0;
-            width: auto;
         }
 
         nav {
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
             font-weight: bold;
-            font-size: 0.9em;
-            padding: 5px 10px;
-            white-space: nowrap;
+            font-size: 0.9em; /* Fuente disminuida en 3 (era 1.2em) */
         }
 
         nav a:hover {
@@ -64,22 +58,31 @@
         }
 
         .content {
-            padding: 20px;
+            padding: 40px;
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 40px;
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
             width: 100%;
+        }
+
+        .services-top {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .service-item {
@@ -88,15 +91,17 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             aspect-ratio: 1 / 1;
             overflow: hidden;
+            width: calc(50% - 20px);
         }
 
         .service-item img {
             width: 100%;
-            height: auto;
+            height: 50%;
             border-radius: 10px;
             margin-bottom: 15px;
             object-fit: cover;
@@ -110,41 +115,25 @@
 
         .service-item p {
             color: #666;
-            font-size: 1em;
-            line-height: 1.5;
+            font-size: 1.2em; /* Fuente */
+            line-height: 1.3;
             text-align: justify;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0 10px;
+            overflow: hidden;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
-        @media (max-width: 768px) {
-            header {
+        @media (max-width: 900px) {
+            .services-top {
                 flex-direction: column;
-                text-align: center;
-                padding: 20px;
+                align-items: center;
             }
-
-            nav {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
             .service-item {
-                padding: 10px;
-            }
-
-            .service-item h3 {
-                font-size: 1.2em;
-            }
-
-            .service-item p {
-                font-size: 0.9em;
+                width: 90%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -164,18 +153,20 @@
     </header>
     <div class="content">
         <section class="services">
-            <div class="service-item">
-                <img src="https://gestionesbv.github.io/eliminacion_usuario_gestionesbv/kpi_looker.png" alt="KPI y Dashboard">
-                <h3>KPI y Dashboards</h3>
-                <p>Creación de indicadores clave de rendimiento personalizados y dashboards interactivos para facilitar la toma de decisiones basadas en datos. Incluye integración con herramientas como Power BI, Looker, y Tableau, adaptadas a tus necesidades empresariales.</p>
+            <div class="services-top">
+                <div class="service-item">
+                    <img src="https://gestionesbv.github.io/gestiones_bv/kpi_looker.png" alt="KPI y Dashboard">
+                    <h3>KPI y Dashboards</h3>
+                    <p>Creación de indicadores clave de rendimiento personalizados y dashboards interactivos para facilitar la toma de decisiones basadas en datos. Incluye integración con herramientas como Power BI, Looker, y Tableau, adaptadas a tus necesidades empresariales.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://gestionesbv.github.io/gestiones_bv/bigquery.png" alt="Servicios SQL">
+                    <h3>Servicios SQL</h3>
+                    <p>Generación y análisis de datos en plataformas como BigQuery, integradas con sistemas como Google y Facebook. Implementación de modelos de datos optimizados para análisis avanzado y reportes automatizados.</p>
+                </div>
             </div>
             <div class="service-item">
-                <img src="https://gestionesbv.github.io/eliminacion_usuario_gestionesbv/bigquery.png" alt="Servicios SQL">
-                <h3>Servicios SQL</h3>
-                <p>Generación y análisis de datos en plataformas como BigQuery, integradas con sistemas como Google y Facebook. Implementación de modelos de datos optimizados para análisis avanzado y reportes automatizados.</p>
-            </div>
-            <div class="service-item">
-                <img src="https://gestionesbv.github.io/eliminacion_usuario_gestionesbv/automatizacion.jpeg" alt="Automatización">
+                <img src="https://gestionesbv.github.io/gestiones_bv/automatizacion.jpeg" alt="Automatización">
                 <h3>Automatización</h3>
                 <p>Automatización de reportes para optimizar procesos analíticos, reduciendo tiempo y esfuerzo operativo. Incluye alertas personalizadas y flujos de trabajo automáticos para agilizar la toma de decisiones.</p>
             </div>
@@ -186,3 +177,4 @@
     </footer>
 </body>
 </html>
+
