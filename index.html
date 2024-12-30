@@ -83,8 +83,8 @@
         /* Sección Quiénes Somos */
         .about-us-container {
             display: flex;
-            flex-direction: row; /* Alineación horizontal */
-            align-items: flex-start; /* Alineación vertical superior */
+            flex-direction: row;
+            align-items: stretch;
             gap: 40px;
             width: 100%;
         }
@@ -95,8 +95,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: justify;
-            flex: 1;
-            min-width: 300px;
+            flex: 2;
             font-size: 1.3em; /* Tamaño de fuente aumentado */
             line-height: 1.6;
             display: flex;
@@ -117,9 +116,18 @@
             line-height: 1.6;
         }
 
+        .marketing-image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .marketing-image {
-            width: 400px; /* Tamaño fijo para mantener proporción */
-            height: 400px;
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            max-height: 400px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             object-fit: cover;
@@ -155,8 +163,8 @@
             width: 100%;
             max-width: 800px;
             display: flex;
-            flex-direction: row; /* Alineación horizontal */
-            align-items: flex-start; /* Alineación vertical superior */
+            flex-direction: row;
+            align-items: flex-start;
             gap: 20px;
             transition: transform 0.3s ease;
             font-size: 1.1em;
@@ -169,7 +177,7 @@
 
         .service-item img {
             width: 40%; /* Tamaño proporcional */
-            height: auto;
+            height: 100%;
             border-radius: 10px;
             object-fit: cover;
         }
@@ -200,8 +208,8 @@
         /* Media Queries */
         @media (max-width: 1024px) {
             .marketing-image {
-                width: 350px;
-                height: 350px;
+                max-width: 350px;
+                max-height: 350px;
             }
 
             .service-item h3 {
@@ -235,14 +243,21 @@
             }
 
             .about-us-container {
-                flex-direction: column; /* Apilar verticalmente */
+                flex-direction: column;
                 align-items: center;
                 gap: 20px;
             }
 
-            .marketing-image {
+            .marketing-image-container {
                 width: 90%;
                 height: auto;
+                max-height: 300px;
+            }
+
+            .marketing-image {
+                width: 100%;
+                height: auto;
+                max-width: none;
                 max-height: 300px;
             }
 
@@ -256,7 +271,7 @@
             }
 
             .service-item {
-                flex-direction: column; /* Apilar verticalmente */
+                flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
@@ -316,7 +331,9 @@
                     En Gestiones BV, nuestra cultura se fundamenta en la innovación, excelencia y confianza. Nuestra misión es potenciar el crecimiento de nuestros clientes a través del marketing innovador y análisis avanzado de datos, transformando datos complejos en estrategias claras y efectivas que ayudan a las empresas a posicionarse y alcanzar sus metas. Aspiramos a ser líderes en transformación digital para negocios en crecimiento, redefiniendo cómo las empresas utilizan el análisis de datos y las estrategias de marketing para crear valor sostenible en un mundo en constante cambio.
                 </p>
             </section>
-            <img src="https://raw.githubusercontent.com/gestionesbv/eliminacion_usuario_gestionesbv/main/marketing.jpg" alt="Marketing" class="marketing-image">
+            <div class="marketing-image-container">
+                <img src="https://raw.githubusercontent.com/gestionesbv/eliminacion_usuario_gestionesbv/main/marketing.jpg" alt="Marketing" class="marketing-image">
+            </div>
         </div>
 
         <section class="services">
