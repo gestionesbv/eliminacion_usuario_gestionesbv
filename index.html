@@ -5,21 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestiones BV</title>
     <style>
-        /* 1) Asegurar que html y body ocupen todo el alto */
-        html, body {
+        /* Estilos generales */
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-        }
-
-        /* 2) Usar flex en body para “estirar” la página y que el footer quede abajo */
-        body {
-            display: flex;
-            flex-direction: column;
             min-height: 100vh;
             font-family: 'Helvetica', sans-serif;
             color: #333;
             background-color: #fff;
+            display: flex;
+            flex-direction: column;
         }
 
         .background-overlay {
@@ -72,7 +67,6 @@
             text-decoration: underline;
         }
 
-        /* 3) .content se expande para ocupar el espacio sobrante */
         .content {
             flex: 1;
             padding: 40px;
@@ -87,26 +81,43 @@
         }
 
         /* Sección Quiénes Somos */
+        .about-us-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+        }
+
         .about-us {
             background: #ffffff;
-            padding: 30px 40px;
+            padding: 60px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 800px;
+            text-align: justify;
+            flex: 1;
+            min-width: 400px;
         }
 
         .about-us h2 {
             color: #6a7a96;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .about-us p {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1.2em;
             line-height: 1.6;
-            text-align: justify;
+        }
+
+        .marketing-image {
+            width: 40%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            max-height: 500px;
         }
 
         /* Sección Servicios */
@@ -123,9 +134,16 @@
 
         .services-wrapper {
             display: flex;
-            overflow-x: auto;
+            overflow-y: auto;
+            height: 600px;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
-            padding-bottom: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
         .service-item {
@@ -135,9 +153,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: left;
             box-sizing: border-box;
-            flex: 0 0 300px;
-            display: flex;
-            flex-direction: column;
+            width: 80%;
             min-height: 350px;
             transition: transform 0.3s ease;
         }
@@ -180,73 +196,55 @@
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Scrollbar personalizado para servicios */
-        .services-wrapper::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .services-wrapper::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .services-wrapper::-webkit-scrollbar-thumb {
-            background: #6a7a96;
-            border-radius: 10px;
-        }
-
-        /* Responsividad */
-        @media (max-width: 1024px) {
-            .service-item {
-                flex: 0 0 250px;
-            }
-        }
-
+        /* Media Queries */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 align-items: center;
                 padding: 10px;
-                width: 100%;
-                box-sizing: border-box;
             }
 
             nav {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 5px;
-                width: 100%;
-                box-sizing: border-box;
                 margin: 10px 0;
             }
 
             nav a {
                 text-align: center;
                 padding: 10px;
-                box-sizing: border-box;
                 display: block;
             }
 
+            .about-us-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .marketing-image {
+                width: 90%;
+                max-height: 300px;
+            }
+
             .about-us {
-                padding: 20px;
+                padding: 30px;
             }
 
             .services-wrapper {
+                height: auto;
+                overflow-y: visible;
                 flex-direction: column;
-                overflow-x: visible;
             }
 
             .service-item {
-                flex: 0 0 100%;
-                min-height: 300px;
-            }
-
-            .services h2 {
-                font-size: 1.8em;
+                width: 90%;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="background-overlay"></div>
     <header>
@@ -260,14 +258,16 @@
         </nav>
     </header>
     <div class="content">
-        <!-- Sección Quiénes Somos -->
-        <section class="about-us">
-            <h2>Quiénes Somos</h2>
-            <p>
-                En Gestiones BV, nuestra cultura se fundamenta en la innovación, excelencia y confianza. Nuestra misión es potenciar el crecimiento de nuestros clientes a través del marketing innovador y análisis avanzado de datos, transformando datos complejos en estrategias claras y efectivas que ayudan a las empresas a posicionarse y alcanzar sus metas. Aspiramos a ser líderes en transformación digital para negocios en crecimiento, redefiniendo cómo las empresas utilizan el análisis de datos y las estrategias de marketing para crear valor sostenible en un mundo en constante cambio.
-            </p>
-        </section>
-        <!-- Sección Nuestros Servicios -->
+        <div class="about-us-container">
+            <section class="about-us">
+                <h2>Quiénes Somos</h2>
+                <p>
+                    En Gestiones BV, nuestra cultura se fundamenta en la innovación, excelencia y confianza. Nuestra misión es potenciar el crecimiento de nuestros clientes a través del marketing innovador y análisis avanzado de datos, transformando datos complejos en estrategias claras y efectivas que ayudan a las empresas a posicionarse y alcanzar sus metas. Aspiramos a ser líderes en transformación digital para negocios en crecimiento, redefiniendo cómo las empresas utilizan el análisis de datos y las estrategias de marketing para crear valor sostenible en un mundo en constante cambio.
+                </p>
+            </section>
+            <img src="https://gestionesbv.github.io/gestiones_bv/marketing.jpg" alt="Marketing" class="marketing-image">
+        </div>
+
         <section class="services">
             <h2>Nuestros Servicios</h2>
             <div class="services-wrapper">
@@ -286,8 +286,7 @@
                     <h3>Automatización</h3>
                     <p>Automatización de procesos repetitivos y envío de reportes programados para maximizar la eficiencia de los equipos y reducir costos. Configuración de triggers, integraciones y scripts a medida.</p>
                 </div>
-                <!-- Puedes agregar más servicios aquí -->
-            </div>
+                </div>
         </section>
     </div>
     <footer>
@@ -295,4 +294,3 @@
     </footer>
 </body>
 </html>
-
