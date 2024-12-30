@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestiones BV</title>
     <style>
-        /* Estilos generales (se aplican a todas las pantallas) */
-        body {
+        /* 1) Asegurar que html y body ocupen todo el alto */
+        html, body {
             margin: 0;
-            font-family: 'Helvetica', sans-serif;
-            color: #333;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* 2) Usar flex en body para “estirar” la página y que el footer quede abajo */
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            font-family: 'Helvetica', sans-serif;
+            color: #333;
         }
 
         .background-overlay {
@@ -65,9 +71,10 @@
             text-decoration: underline;
         }
 
+        /* 3) .content se expande para ocupar el espacio sobrante */
         .content {
-            padding: 40px;
             flex: 1;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,6 +82,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .services {
@@ -134,12 +142,11 @@
         }
 
         footer {
-          text-align: center;
-          padding: 10px;
-          background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
         }
 
-        /* Media Query para pantallas pequeñas (móviles) */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -212,7 +219,11 @@
             <div class="service-item">
                 <img src="https://gestionesbv.github.io/gestiones_bv/automatizacion.jpeg" alt="Automatización">
                 <h3>Automatización</h3>
-                <p>Automatización de reportes para optimizar procesos analíticos, reduciendo tiempo y esfuerzo operativo. Incluye alertas personalizadas y flujos de trabajo automáticos para agilizar la toma de decisiones.</p>
+                <p>
+                    Automatización de procesos repetitivos y envío de reportes programados 
+                    para maximizar la eficiencia de los equipos y reducir costos. 
+                    Configuración de triggers, integraciones y scripts a medida.
+                </p>
             </div>
         </section>
     </div>
@@ -221,3 +232,4 @@
     </footer>
 </body>
 </html>
+
