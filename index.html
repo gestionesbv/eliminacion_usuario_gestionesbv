@@ -27,34 +27,33 @@
 
     /* Encabezado */
     header {
-      background-color: rgba(248, 249, 250, 0.85);
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
     }
 
     header h1 {
-      font-size: 2.5em;
-      color: #6a7a96;
+      font-size: 1.5em;
+      margin: 0;
     }
 
-    /* Barra de navegación */
     nav {
-      background-color: rgba(248, 249, 250, 0.85);
-      padding: 10px 0;
-      text-align: center;
+      display: flex;
+      gap: 15px;
     }
 
     nav a {
-      margin: 0 15px;
       text-decoration: none;
-      color: #555;
+      color: #fff;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
     nav a:hover {
-      color: #333;
+      text-decoration: underline;
     }
 
     /* Contenido principal */
@@ -83,6 +82,10 @@
       text-align: center;
       width: 30%;
       min-width: 250px;
+      aspect-ratio: 1 / 1; /* Cuadrado */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .service-item img {
@@ -114,6 +117,30 @@
       width: 100%;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     }
+
+    /* Diseño responsivo */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-item {
+        width: 80%;
+        max-width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -123,17 +150,15 @@
   <!-- Encabezado -->
   <header>
     <h1>Gestiones BV</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="politica_privacidad.html">Política de Privacidad</a>
+      <a href="eliminacion_datos.html">Eliminación de Datos</a>
+      <a href="terminos_condiciones.html">Términos y Condiciones</a>
+      <a href="cultura.html">Cultura</a>
+      <a href="contacto.html">Contáctanos</a>
+    </nav>
   </header>
-
-  <!-- Barra de navegación -->
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="politica_privacidad.html">Política de Privacidad</a>
-    <a href="eliminacion_datos.html">Eliminación de Datos</a>
-    <a href="terminos_condiciones.html">Términos y Condiciones</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="contacto.html">Contáctanos</a>
-  </nav>
 
   <!-- Contenido principal -->
   <div class="content">
